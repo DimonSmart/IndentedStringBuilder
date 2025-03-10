@@ -1,14 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace DimonSmart.IndentedStringBuilder
 {
-    public record struct IndentedStringBuilderOptions(
-        int Capacity = 16,
-        int InitialIndent = 0,
-        int IndentSize = 4,
-        string OpeningBracket = "{",
-        string ClosingBracket = "}",
-        bool IndentMultiline = true);
 
     public class IndentedStringBuilder : IDisposable
     {
@@ -20,10 +14,10 @@ namespace DimonSmart.IndentedStringBuilder
         private readonly bool _indentMultiline;
 
         public IndentedStringBuilder()
-            : this(new IndentedStringBuilderOptions()) { }
+          : this(new IndentedStringBuilderOptions()) { }
 
         public IndentedStringBuilder(int capacity)
-            : this(new IndentedStringBuilderOptions(Capacity: capacity)) { }
+            : this(new IndentedStringBuilderOptions(capacity)) { }
 
         public IndentedStringBuilder(IndentedStringBuilderOptions options)
         {
@@ -47,7 +41,7 @@ namespace DimonSmart.IndentedStringBuilder
         {
             if (_indentMultiline)
             {
-                var lines = line.Split(['\n', '\r'], StringSplitOptions.RemoveEmptyEntries);
+                var lines = line.Split(new char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var singleLine in lines)
                 {
                     _sb.AppendLine(new string(' ', _indentLevel * _indentSize) + singleLine);
@@ -78,11 +72,17 @@ namespace DimonSmart.IndentedStringBuilder
             }
         }
 
-        private class IndentBlock(IndentedStringBuilder builder, string closingBracket) : IDisposable
+        private class IndentBlock : IDisposable
         {
-            private readonly IndentedStringBuilder _builder = builder;
-            private readonly string _closingBracket = closingBracket;
+            private readonly IndentedStringBuilder _builder;
+            private readonly string _closingBracket;
             private bool _disposed;
+
+            public IndentBlock(IndentedStringBuilder builder, string closingBracket)
+            {
+                _builder = builder;
+                _closingBracket = closingBracket;
+            }
 
             public void Dispose()
             {
