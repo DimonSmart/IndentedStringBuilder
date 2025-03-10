@@ -1,5 +1,4 @@
-```markdown
-# DimonSmart.IndentedStringBuilder
+# IndentedStringBuilder
 
 A lightweight and flexible utility for building strings with automatic indentation and customizable formatting. This NuGet package simplifies the generation of indented code blocks, configuration files, or any structured text output.
 
@@ -21,9 +20,10 @@ dotnet add package DimonSmart.IndentedStringBuilder
 
 ## Usage
 
-Below is a minimal example of how to use the `IndentedStringBuilder`:
+Below is a minimal example of how to use the IndentedStringBuilder:
 
 ```csharp
+using DimonSmart.IndentedStringBuilder;
 var builder = new IndentedStringBuilder();
 
 using (builder.Indent("Block"))
@@ -60,4 +60,3 @@ Block
 ## License
 
 This project is licensed under the [0BSD License](LICENSE).
-```
