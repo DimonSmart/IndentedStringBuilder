@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Configuration>Release</Configuration>
+		<IsPackable>true</IsPackable>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Title>DimonSmart.IndentedStringBuilder</Title>
+		<Description>A simple and powerful indented string builder. Useful for code-like text generation, i.e. source generators.</Description>
+		<Authors>DimonSmart</Authors>
+		<Company>DimonSmart</Company>
+		<PackageProjectUrl>https://github.com/DimonSmart/IndentedStringBuilder</PackageProjectUrl>
+		<PackageIcon>IndentedStringBuilderIcon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/DimonSmart/IndentedStringBuilder</RepositoryUrl>
+		<PackageTags>Indented;StringBuilder;Formatting</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<LangVersion>latest</LangVersion>
+		<Deterministic>true</Deterministic>
+		<PackageVersion>1.$([System.DateTime]::UtcNow.ToString("yyMdd")).$([System.DateTime]::UtcNow.ToString("HHmm"))</PackageVersion>
+		<Version>1.$([System.DateTime]::UtcNow.ToString("yyMdd")).$([System.DateTime]::UtcNow.ToString("HHmm"))</Version>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="..\README.md" Pack="True" PackagePath="/" />
+		<None Include="IndentedStringBuilderIcon.png" Pack="True" PackagePath="/" />
+	</ItemGroup>
+</Project>
