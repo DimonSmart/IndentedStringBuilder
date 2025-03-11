@@ -1,16 +1,15 @@
 # IndentedStringBuilder
 
-This package is a StringBuilder wrapper.
-Main purpose is to automate indented texts (code) creation.
-Look at the ussage exampples - it's easy to understand.
+This package is a wrapper around `StringBuilder`, designed to simplify the creation of indented text (such as code).  
+Check out the usage examples – it’s easy to understand!  
 
 ## Features
 
-- **Automatic (with using) Indentation:** Just wrap indented block into using statement.
-- **Configurable Settings:** Customize initial indent, indent size, and initial StingBuilder capacity.
-- **Customizable Brackets:** Define your own brackets style for indented blocks.
-- **Multi-line Support:** Option to indent each line in a multi-line string.
-- **Scoped Indentation:** It's possible to use folded indention blocks.
+- **Automatic Indentation with `using`:** Simply wrap an indented block in a `using` statement.  
+- **Configurable Settings:** Customize the initial indent, indent size, and `StringBuilder` capacity.  
+- **Customizable Brackets:** Define your own bracket style for indented blocks.  
+- **Multi-line Support:** Automatically indent each line of a multi-line string.  
+- **Scoped Indentation:** Supports nested indentation blocks. 
 
 ## Installation
 
